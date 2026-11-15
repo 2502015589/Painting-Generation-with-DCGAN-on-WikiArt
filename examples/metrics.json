@@ -1,0 +1,11 @@
+{
+  "FID": 51.88393882757987,
+  "InceptionScore": 5.177344872976302,
+  "num_real_images": 5000,
+  "num_generated_images": 5000,
+  "real_source": "held-out WikiArt test split",
+  "fid_features": "pytorch-fid InceptionV3 pool3, 2048 dimensions",
+  "is_model": "torchvision InceptionV3 ImageNet pretrained",
+  "is_protocol": "single aggregate score, no split standard deviation",
+  "completed_epochs": 100
+}

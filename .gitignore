@@ -1,0 +1,11 @@
+dataset/
+dcgan_results/
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+.env
+*.pt
+*.pth
+*.arrow
+*.parquet
+*.npy
