@@ -8,7 +8,6 @@ This project implements a deep convolutional generative adversarial network (DCG
 
 - Python 3.13
 - PyTorch 2.6.0 with CUDA 12.4
-- NVIDIA GeForce RTX 4050 Laptop GPU
 
 ### Install dependencies
 
@@ -20,7 +19,7 @@ python -m pip install -r requirements.txt
 
 ### Run
 
-Launch JupyterLab with `python -m jupyterlab` from the project root. Open `as2.ipynb` and execute the cells in order. Training results and model weights are saved in `dcgan_results/`. To resume from your checkpoint, set `RESUME = True` and set `EPOCHS` to the desired total.
+Launch JupyterLab from the project root. Open `as2.ipynb` and execute the cells in order. Training results and model weights are saved in `dcgan_results/`. To resume from your checkpoint, set `RESUME = True` and set `EPOCHS` to the desired total.
 
 ## Dataset
 
@@ -68,19 +67,15 @@ The grid shows images from fixed Gaussian latent vectors at epoch 100. Several s
 
 FID compares 5,000 generated images with 5,000 held-out WikiArt images using 2,048-dimensional Inception-v3 pooling features from `pytorch-fid`. Inception Score uses only the generated images and is computed from torchvision's ImageNet-pretrained Inception-v3 class probabilities. Both metrics are computed using PyTorch-Ignite.
 
-| Epoch | FID ↓ | Inception Score ↑ |
+| Epoch | FID | Inception Score |
 |---:|---:|---:|
 | 3 | 242.15 | 2.50 |
 | 20 | 69.06 | 5.05 |
 | 30 | 58.91 | 4.92 |
-| 50 | **51.76** | 5.14 |
-| 70 | 53.23 | **5.27** |
+| 50 | 51.76 | 5.14 |
+| 70 | 53.23 | 5.27 |
 | 100 | 51.88 | 5.18 |
 
 FID changed little across the evaluated checkpoints after epoch 50. The [epoch-100 metrics](examples/metrics.json) record the final evaluation settings and scores.
 
-## References
-
-- Radford, A., Metz, L., and Chintala, S. [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434). ICLR, 2016.
-- PyTorch-Ignite. [GAN evaluation using FID and IS](https://pytorch-ignite.ai/blog/gan-evaluation-with-fid-and-is/).
 
